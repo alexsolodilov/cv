@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Manager – Alexandr Solodilov</title>
+  <!-- Google Fonts Example -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" 
+    rel="stylesheet"
+  >
+  <style>
+    :root {
+      --main-color: #3f51b5;
+      --secondary-color: #f5f5f5;
+      --text-color: #333;
+      --bg-color: #fff;
+      --link-color: #3f51b5;
+      --font-family: 'Inter', Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--text-color);
+      background-color: var(--secondary-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--bg-color);
+      padding: 2rem 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background-color: var(--bg-color);
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    section + section {
+      margin-top: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--main-color);
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      background-color: var(--main-color);
+      margin-top: 8px;
+      border-radius: 2px;
+    }
+
+    .contacts, .skills, .languages, .education, .about {
+      margin-bottom: 1rem;
+    }
+
+    .contacts a,
+    .contacts p {
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text-color);
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    .contacts a:hover {
+      color: var(--link-color);
+      text-decoration: underline;
+    }
+
+    /* Accordion styles */
+    .accordion-container {
+      border-top: 1px solid #ddd;
+    }
+
+    .accordion {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .accordion-header {
+      cursor: pointer;
+      padding: 1rem 0;
+      font-weight: 600;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.1rem;
+    }
+
+    .accordion-header:hover {
+      color: var(--link-color);
+    }
+
+    .accordion-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-header.active .accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+
+    .accordion-content.open {
+      padding: 1rem 0;
+      max-height: 1000px; /* Large enough to accommodate content */
+    }
+
+    .accordion-content p {
+      margin-bottom: 1rem;
+    }
+
+    .key-results {
+      margin: 0.5rem 0;
+      padding-left: 1.2rem;
+      list-style: disc;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+
+      main {
+        margin: 1rem;
+        padding: 1rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Project Manager – Alexandr Solodilov</h1>
+    <p>Full-time employment, full working day • Ready for business trips • Open to offers</p>
+  </header>
+
+  <main>
+    <!-- Contacts -->
+    <section>
+      <h2>Contacts</h2>
+      <div class="contacts">
+        <p><strong>Phone:</strong> +374 (43) 35-20-85</p>
+        <p><strong>Telegram:</strong> 
+          <a href="https://t.me/alexsolodilov" target="_blank">@alexsolodilov</a> 
+          — preferred means of communication
+        </p>
+        <p><strong>Email:</strong> 
+          <a href="mailto:alexandr.solodilov@gmail.com">alexandr.solodilov@gmail.com</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- About me -->
+    <section>
+      <h2>About Me</h2>
+      <div class="about">
+        <p>
+          An experienced project manager with more than 10 years of work in various industries,
+          including information technology, finance, and retail. Key skills include team management,
+          data analysis, business process optimization, technical documentation, and functionality testing. 
+          Skilled in creating internal tools to simplify processes and achieve impressive results.
+        </p>
+        <p>
+          I am also passionate about developing Telegram bots and trading robots using Python.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <h2>Skills</h2>
+      <div class="skills">
+        <p>
+          <strong>Tools and Technologies:</strong><br/>
+          SQL, HTML, Data Analysis, MS Excel, Project Management, Atlassian Jira, PostgreSQL, Git, Scrum,
+          Agile Project Management, QA, MS Visio, Python, JavaScript, DataLens, AWS, Postman, Trello, Yandex Cloud
+        </p>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2>Higher Education</h2>
+      <div class="education">
+        <p><strong>2014</strong></p>
+        <p>
+          Southern Federal University, Rostov-on-Don<br>
+          Faculty of Mathematics, Mechanics and Computer Science, Applied Mathematics and Informatics
+        </p>
+      </div>
+      <p><strong>Electronic Certificates:</strong><br/>
+        2023 — AWS Certified Cloud Practitioner
+      </p>
+    </section>
+
+    <!-- Work experience -->
+    <section>
+      <h2>Work Experience (11 years)</h2>
+      <div class="accordion-container">
+        
+        <!-- Yandex -->
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>February 2022 — Present (3 years), Yandex</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p>
+              <strong>Position:</strong> Project Manager  
+              <br><strong>Project:</strong> Yandex Routing (known globally as RouteQ)
+            </p>
+            <p>
+              <strong>Responsibilities:</strong><br/>
+              Integrating new clients, providing API consultations, configuring the product, 
+              troubleshooting, and creating development tickets. Supporting clients with complex cases, 
+              creating analytics tools and additional internal tools to streamline workflows.
+            </p>
+            <p><strong>Key Achievements:</strong></p>
+            <ul class="key-results">
+              <li>Launched 20+ clients from onboarding to full integration</li>
+              <li>Developed 3 internal automation tools that reduced manual operations by 5x</li>
+              <li>Client-facing tool (Telegram bot + cloud functions in Python) resulting in +3 retained clients</li>
+              <li>Recorded 12 YouTube videos presenting functionality (in two languages)</li>
+              <li>Created 19 product release-notes blocks on the website (in two languages), plus Telegram channel posts</li>
+              <li>Developed 30 training and assessment tests, 2 mini-courses, and conducted 10 live training sessions</li>
+              <li>Fine-tuned a Yandex-GPT model on service documentation for interactive Q&A</li>
+              <li>Built a Telegram bot for client chats (activity tracking, internal docs search, mailouts)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Expobank -->
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>March 2020 — February 2022 (2 years), Expobank</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p>
+              <strong>Position:</strong> Project Manager<br/>
+              <strong>Project:</strong> Web platform for bank guarantees
+            </p>
+            <p>
+              <strong>Responsibilities:</strong><br/>
+              Analyzing business requirements, writing technical documentation (BFT and SRS). Leading new products development as a project manager and business analyst. 
+              Designing complex process maps in Visio. Overseeing the development team, setting priorities, working with support, writing SQL queries to resolve incidents, 
+              participating in agile transformation (scrum), performing functionality testing, overseeing releases and hotfixes, and consulting partners and employees.
+            </p>
+            <p><strong>Key Achievements:</strong></p>
+            <ul class="key-results">
+              <li>During a crisis period when the CTO left, retained the dev team from disintegration by taking on CTO responsibilities for six months</li>
+              <li>Launched two projects from scratch: “Contract Execution Credit” and “Settlement and Cash Services”</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mebelrama & Westwing -->
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>July 2019 — March 2020 (9 months), Mebelrama.ru & Westwing.ru</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p>
+              <strong>Position:</strong> Technical Project Manager<br/>
+              <strong>Responsibilities:</strong><br/>
+              Managing the company’s internal product (a main backend system plus several microservices). 
+              Prioritizing backlog items (Jira), running two-week sprints (Scrum), resolving issues (SQL), 
+              and testing releases (API testing with Postman/Insomnia). Some DevOps tasks (clearing RMQ queues, restarts).
+              <br>
+              <strong>Main stack:</strong> PHP (Yii, Zend), PostgreSQL, MySQL, RMQ, GitLab, Bitbucket
+            </p>
+          </div>
+        </div>
+
+        <!-- 42 Web Studio -->
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>August 2017 — July 2019 (2 years), 42 Web Studio</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p>
+              <strong>Position:</strong> Project Manager<br/>
+              <strong>Responsibilities:</strong><br/>
+              Leading projects for international clients: analyzing requirements, decomposing tasks, continuous communication, 
+              managing up to 10 developers/designers, testing, bug hunting, and making minor code changes if needed. 
+              Billing, negotiations, and conflict management.
+              <br><strong>Main stack:</strong> Vue/React/React Native, Ruby on Rails/Node.js, Trello, Notion, TeamGantt.
+            </p>
+          </div>
+        </div>
+
+        <!-- Russian Post -->
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>July 2016 — August 2017 (1 year 2 months), Russian Post</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p>
+              <strong>Position:</strong> Chief Specialist in Efficiency Analysis for Centers and Postamats<br/>
+              <strong>Responsibilities:</strong><br/>
+              Analyzing performance metrics for divisions, collecting and visualizing data, preparing analytical reports, 
+              automating reporting with VBA macros.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bazis-Trade -->
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>September 2014 — July 2016 (1 year 11 months), Bazis-Trade LLC</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p>
+              <strong>Position:</strong> Economist-Analyst, Project Manager<br/>
+              <strong>Responsibilities:</strong><br/>
+              Monitoring prices for various goods and services, working with suppliers (including in China), 
+              purchasing, business trips (Canton Fair 2015), and data collection/analysis.
+            </p>
+          </div>
+        </div>
+
+        <!-- Grand-Capital Management -->
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>February 2014 — August 2014 (7 months), Grand-Capital Management LLC</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p>
+              <strong>Position:</strong> Specialist in Mutual Funds<br/>
+              <strong>Responsibilities:</strong><br/>
+              Maintaining mutual funds, preparing reports for the Central Bank of Russia, 
+              daily calculation of net asset value, working with qualified investors, anti-money-laundering checks, 
+              documentation, and outgoing correspondence.
+            </p>
+          </div>
+        </div>
+
+      </div> <!-- .accordion-container -->
+    </section>
+  </main>
+
+  <script>
+    // Simple accordion script
+    const accordions = document.querySelectorAll('.accordion');
+
+    accordions.forEach((acc) => {
+      const header = acc.querySelector('.accordion-header');
+      const content = acc.querySelector('.accordion-content');
+      header.addEventListener('click', () => {
+        const isActive = header.classList.contains('active');
+        // Close all open accordions first
+        document.querySelectorAll('.accordion-header').forEach(h => {
+          h.classList.remove('active');
+        });
+        document.querySelectorAll('.accordion-content').forEach(c => {
+          c.classList.remove('open');
+        });
+        // Open/close the current one
+        if (!isActive) {
+          header.classList.add('active');
+          content.classList.add('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
