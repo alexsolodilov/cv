@@ -44,6 +44,16 @@
       z-index: 10;
     }
 
+    header .profile-photo {
+      display: block;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1rem; /* отступ снизу */
+      border-radius: 50%; /* чтобы фото было круглым */
+      object-fit: cover; /* чтобы фото обрезалось по окружности */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
     header h1 {
       font-size: 2rem;
       margin-bottom: 0.5rem;
@@ -175,6 +185,12 @@
 <body>
 
   <header>
+    <!-- ФОТО: замените ссылку на вашу -->
+    <img 
+      class="profile-photo" 
+      src="https://alexsolodilov.github.io/cv/2025-01-07 21.18.39.jpg" 
+      alt="Alexandr Solodilov"
+    />
     <h1>Project Manager – Alexandr Solodilov</h1>
     <p>Full-time employment, full working day • Ready for business trips • Open to offers</p>
   </header>
